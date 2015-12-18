@@ -6,13 +6,14 @@
   <h1>Unicorns Everywhere!</h1>
 
   {{> corrals}}
+  <br/>
   {{> unicorns}}
 </body>
 
 <template name="corrals">
   {{#each corrals}}
   <section class=corral>
-    <h2 id={{_id}}>{{location}} CORRAL</h2>
+    <h2 id={{_id}}>{{location}}</h2>
     <div>
       Unicorn bait: {{bait}}
     </div>
@@ -23,10 +24,7 @@
 <template name="unicorns">
   {{#each unicorns}}
   <section id={{_id}} class=unicorn style='background-color: {{color}}'>
-
-      {{name}}
-      {{favFood}}
-
+    {{name}} loves {{favFood}}.
   </section>
   {{/each}}
 </template>

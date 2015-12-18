@@ -10,12 +10,17 @@ if (Meteor.isClient) {
 
   Template.corrals.helpers({
     corrals: function() {
-      return Corrals.find().fetch();
+      var myCorrals = Corrals.find().map(function(doc) {
+        doc.location = doc.location.toUpperCase() + ' CORRAL';
+        return doc;
+      });
+      return myCorrals;
     },
 
     unicorns: function() {
       var corral = Corrals.findOne();
-      return Unicorns.find({location: corral.location})
+      console.log(Unicorns.find({location: corral.location}).fetch());
+      return Unicorns.find({location: corral.location}).fetch();
     }
   });
 
@@ -32,7 +37,7 @@ if (Meteor.isClient) {
       var id = evt.target.id;
       var bait = _.sample(food);
 
-      Corrals.update(id,{$set: {bait: bait}})
+      Corrals.update(id, {$set: {bait: bait}});
     }
   });
 }
@@ -56,7 +61,7 @@ if (Meteor.isServer) {
         favFood: 'candy',
         location: 'upstairs'
         }
-      )
+      );
     }
 
     if (Corrals.find().count() === 0) {
@@ -67,6 +72,5 @@ if (Meteor.isServer) {
         }
       );
     }
-    // code to run on server at startup
   });
 }
