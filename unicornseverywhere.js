@@ -10,9 +10,9 @@ if (Meteor.isClient) {
 
   Template.corrals.helpers({
     corrals: function() {
-      var myCorrals = Corrals.find().map(function(doc) {
-        doc.location = doc.location.toUpperCase() + ' CORRAL';
-        return doc;
+      var myCorrals = Corrals.find().map(function(corral) {
+        corral.location = corral.location.toUpperCase() + ' CORRAL';
+        return corral;
       });
       return myCorrals;
     },
