@@ -10,9 +10,9 @@ if (Meteor.isClient) {
 
   Template.corrals.helpers({
     corrals: function() {
-      var myCorrals = Corrals.find().map(function(doc) {
-        doc.location = doc.location.toUpperCase() + ' CORRAL';
-        return doc;
+      var myCorrals = Corrals.find().map(function(corral) {
+        corral.location = corral.location.toUpperCase() + ' CORRAL';
+        return corral;
       });
       return myCorrals;
     },
@@ -62,7 +62,19 @@ if (Meteor.isServer) {
         location: 'upstairs'
         }
       );
+
+      Unicorns.insert(
+        {
+        name: 'Philbert',
+        color: 'fucia',
+        favFood: 'popcorn',
+        location: 'basement'
+        }
+      );
     }
+
+
+
 
     if (Corrals.find().count() === 0) {
       Corrals.insert(
