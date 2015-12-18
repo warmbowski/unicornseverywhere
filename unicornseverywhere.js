@@ -72,19 +72,19 @@ if (Meteor.isServer) {
       }
     );
 
-    // Unicorns.insert(
-    //   {
-    //   name: 'Betty',
-    //   color: 'teal',
-    //   favFood: 'cake',
-    //   location: 'basement'
-    //   }
-    // );
+    Unicorns.insert(
+      {
+      name: 'Betty',
+      color: 'teal',
+      favFood: 'cake',
+      location: 'basement'
+      }
+    );
 
     if (Corrals.find().count() === 0) {
       Corrals.insert(
         {
-        location: 'The Hardy',
+        location: 'The Hardy room',
         bait: ''
         }
       );
