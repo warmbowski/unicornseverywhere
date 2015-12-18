@@ -1,0 +1,32 @@
+<head>
+  <title>unicornseverywhere</title>
+</head>
+
+<body>
+  <h1>Unicorns Everywhere!</h1>
+
+  {{> corrals}}
+  {{> unicorns}}
+</body>
+
+<template name="corrals">
+  {{#each corrals}}
+  <section class=corral>
+    <h2 id={{_id}}>{{location}} CORRAL</h2>
+    <div>
+      Unicorn bait: {{bait}}
+    </div>
+  </section>
+  {{/each}}
+</template>
+
+<template name="unicorns">
+  {{#each unicorns}}
+  <section id={{_id}} class=unicorn style='background-color: {{color}}'>
+
+      {{name}}
+      {{favFood}}
+
+  </section>
+  {{/each}}
+</template>
