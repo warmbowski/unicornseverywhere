@@ -84,7 +84,7 @@ if (Meteor.isServer) {
     if (Corrals.find().count() === 0) {
       Corrals.insert(
         {
-        location: 'conference room',
+        location: 'The Hardy',
         bait: ''
         }
       );
