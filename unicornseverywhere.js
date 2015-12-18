@@ -44,37 +44,42 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-    if (Unicorns.find().count() === 0) {
-      Unicorns.insert(
-        {
-        name: 'fred',
-        color: 'orange',
-        favFood: 'ice cream',
-        location: 'hallway'
-        }
-      );
+    Unicorns.remove({});
+    Unicorns.insert(
+      {
+      name: 'Fred',
+      color: 'orange',
+      favFood: 'ice cream',
+      location: 'hallway'
+      }
+    );
 
-      Unicorns.insert(
-        {
-        name: 'barney',
-        color: 'pink',
-        favFood: 'candy',
-        location: 'upstairs'
-        }
-      );
+    Unicorns.insert(
+      {
+      name: 'Barney',
+      color: 'pink',
+      favFood: 'candy',
+      location: 'upstairs'
+      }
+    );
 
-      Unicorns.insert(
-        {
-        name: 'Philbert',
-        color: 'fucia',
-        favFood: 'popcorn',
-        location: 'basement'
-        }
-      );
-    }
+    Unicorns.insert(
+      {
+      name: 'Wilma',
+      color: 'fuchsia',
+      favFood: 'popcorn',
+      location: 'basement'
+      }
+    );
 
-
-
+    // Unicorns.insert(
+    //   {
+    //   name: 'Betty',
+    //   color: 'teal',
+    //   favFood: 'cake',
+    //   location: 'basement'
+    //   }
+    // );
 
     if (Corrals.find().count() === 0) {
       Corrals.insert(
