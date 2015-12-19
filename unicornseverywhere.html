@@ -4,10 +4,7 @@
 
 <body>
   <h1>Unicorns Everywhere!</h1>
-
   {{> corrals}}
-  <br/>
-  {{> unicorns}}
 </body>
 
 <template name="corrals">
@@ -17,14 +14,22 @@
     <div>
       Unicorn bait: {{bait}}
     </div>
-  </section>
-  {{/each}}
-</template>
 
-<template name="unicorns">
-  {{#each unicorns}}
-  <section id={{_id}} class=unicorn style='background-color: {{color}}'>
-    {{name}} loves {{favFood}}.
+    <section class='caught flex-container'>
+      {{#each caught}}
+      <div id={{_id}} class=unicorn style='background-color: {{color}}'>
+        {{name}}
+      </div>
+      {{/each}}
+    </section>
   </section>
   {{/each}}
+
+  <section class='free flex-container'>
+    {{#each unicorns}}
+    <div id={{_id}} class=unicorn style='background-color: {{color}}'>
+      {{name}} loves {{favFood}}.
+    </div>
+    {{/each}}
+  </section>
 </template>

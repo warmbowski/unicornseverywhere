@@ -4,6 +4,16 @@
 }
 
 .unicorn {
-  font-size: 14px;
-  width: 33%;
+  font-size: 0.8em;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 1em;
+}
+
+.caught {
+  justify-content: flex-start;
+  align-items: baseline;
 }
